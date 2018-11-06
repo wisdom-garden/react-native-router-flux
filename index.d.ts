@@ -224,7 +224,7 @@ declare namespace RNRF {
      * optional wrappert
      */
     wrapBy?: ()=>any,
-      
+
     panHandlers?: null | (()=>any)
   }
 
@@ -293,13 +293,14 @@ declare namespace RNRF {
     pop(props?: props): void,
     jump(props: props): void,
     refresh(props: props): void,
+    refreshTabScene(props: props): void,
     focus(props: props): void,
     create(scene: React.ReactNode, wrapBy?: () => any): Object,
     [sceneKey: string]: (props?: props) => void
   }
 
   export var Actions: RNRFActions;
-  
+
   // ActionsConst
   interface RNRFActionConst {
     JUMP: string,
@@ -314,6 +315,7 @@ declare namespace RNRF {
     RESET: string,
     FOCUS: string,
     ANDROID_BACK: string,
+    REFRESH_TAB_SCENE: string,
   }
   export var ActionConst: RNRFActionConst;
 

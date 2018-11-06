@@ -23,6 +23,7 @@ export const ActionMap = {
   focus: ActionConst.FOCUS,
   pushOrPop: ActionConst.PUSH_OR_POP,
   androidBack: ActionConst.ANDROID_BACK,
+  refreshTabScene: ActionConst.REFRESH_TAB_SCENE,
   [ActionConst.JUMP]: ActionConst.JUMP,
   [ActionConst.PUSH]: ActionConst.PUSH,
   [ActionConst.REPLACE]: ActionConst.REPLACE,
@@ -35,6 +36,7 @@ export const ActionMap = {
   [ActionConst.FOCUS]: ActionConst.FOCUS,
   [ActionConst.PUSH_OR_POP]: ActionConst.PUSH_OR_POP,
   [ActionConst.ANDROID_BACK]: ActionConst.ANDROID_BACK,
+  [ActionConst.REFRESH_TAB_SCENE]: ActionConst.REFRESH_TAB_SCENE
 };
 
 function filterParam(data) {
@@ -201,6 +203,10 @@ class Actions {
 
   refresh(props = {}) {
     return this.callback({ ...filterParam(props), type: ActionConst.REFRESH });
+  }
+
+  refreshTabScene(props = {}) {
+    return this.callback({ ...filterParam(props), type: ActionConst.REFRESH_TAB_SCENE });
   }
 
   focus(props = {}) {
